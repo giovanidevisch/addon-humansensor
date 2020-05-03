@@ -1,0 +1,4 @@
+Version 0.0.1
+Date: 03May2330
+Added web ui to show the ESP MLX sensor status and image 
+Connected with device and it is showing the thermal image status and image 

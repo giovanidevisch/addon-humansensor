@@ -1,0 +1,20 @@
+{
+  "name": "HumanSensorImage",
+  "version": "1",
+  "slug": "human_sensor_image",
+  "description": "Human Sensor: Sensing human",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "ports": {
+    "8000/tcp": 8000
+  },
+  "options":
+  {
+    "mqtt_host": "hassio.local"
+  },
+  "schema":
+  {
+    "mqtt_host": "str"
+   }
+}
