@@ -1,6 +1,6 @@
 {
   "name": "HumanSensorImage",
-  "version": "1",
+  "version": "0.3.0",
   "slug": "human_sensor_image",
   "description": "Human Sensor: Sensing human",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -11,10 +11,20 @@
   },
   "options":
   {
-    "mqtt_host": "hassio.local"
+    "mqtt_host": "hassio.local",
+    "mqtt_user": "",
+    "mqtt_password": "",
+    "mqtt_topic1": "home-assistant/sensor/temp1",
+    "mqtt_topic2": "home-assistant/sensor/info",
+    "mqtt_topic3": "home-assistant/image"
   },
   "schema":
   {
-    "mqtt_host": "str"
+    "mqtt_host": "str",
+    "mqtt_user": "str",
+    "mqtt_password": "str",
+    "mqtt_topic1": "str",
+    "mqtt_topic2": "str",
+    "mqtt_topic3": "str"
    }
 }

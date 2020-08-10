@@ -1,0 +1,19 @@
+.logo {
+  width: 180px;
+  height: 50px;
+  background-image: url("./../assets/logo.png");
+  background-size: contain;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  margin: 16px 8px 16px 0;
+  float: left;
+}
+
+.site-layout-content {
+  padding: 24px;
+  min-height: 77vh;
+}
+
+.header {
+  background: "#3DAEC0";
+}

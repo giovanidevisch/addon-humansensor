@@ -26,7 +26,7 @@ export const MqttProvider = ({ children }) => {
         "ws://hassio.local:1884",
         {
           username: "user1",
-          password: "user1",          
+          password: "user1",
           clean: false,
           clientId: "HumanSensor_Web_1" + Math.random(),
         });

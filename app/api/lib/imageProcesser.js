@@ -1,6 +1,5 @@
 var fs = require('fs');
 var png_encoder = require('png-stream');
-//var sharp = require('sharp');
 
 class imageProcesser {
 
@@ -37,21 +36,9 @@ class imageProcesser {
             }
         }
         var fileStream = await fs.createWriteStream('home-assistant-image1.png');
-
         fileStream.on("close", () => {
-            // sharp('home-assistant-image1.png')
-            //     .flip(true)
-            //   //  .resize(640, 480)
-            //     .toBuffer()
-            //     .then(data => {
-            //         callback(data.toString('base64'));
-            //     })
-            //     .catch(err => {
-            //         console.log(`Image processing issue ${err}`)
-            //         callback(false);
-            //     });
-            var v = fs.readFileSync('home-assistant-image1.png');
-            callback(new Buffer(v).toString('base64'));
+            var imageData = fs.readFileSync('home-assistant-image1.png');
+            callback(new Buffer(imageData).toString('base64'));
         });
         var enc = new png_encoder.Encoder(this.width, this.height);
         enc.pipe(fileStream);

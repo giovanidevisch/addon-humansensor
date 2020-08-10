@@ -12,9 +12,9 @@ class MqttHandler {
         // Connect mqtt without credentials 
         // (in case of needed, add username and password parms to 2nd param object)
         this.mqttClient = mqtt.connect(this.host, {
+            username: "user1",
+            password: "user1",
             clean: false,
-			username: "user1",
-            password: "user1",       
             clientId: "HumanSensor_Server_1" + Math.random(),
         });
 
@@ -39,8 +39,8 @@ class MqttHandler {
                 const m = JSON.parse(message.toString());
                 console.log("MQTT Message");
                 ip.processImage(m.image, (image) => {
-                    let passMessage = { "id": m.id, "image": image };
-                    console.log( passMessage);
+                    let passMessage = { "id": m.id, "image": image, "rects": m.rects };
+                    // console.log("Image data to be send ", passMessage);
                     if (image) {
                         this.sendMessage('home-assistant/pimage', JSON.stringify(passMessage));
                         console.log("Processed image send to MQTT");
@@ -59,7 +59,11 @@ class MqttHandler {
     // Sends a mqtt message to topic: mytopic
     sendMessage(topic, message) {
         this.mqttClient.publish(topic, message, (e) => {
-            console.log("MQTT send message failed");
+            if(e){
+                console.log("MQTT send message failed");
+                return;
+            }
+            console.log("MQTT send message successfully");
         });
     }
 }
