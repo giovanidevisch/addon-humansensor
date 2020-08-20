@@ -5,15 +5,15 @@ var ip = new imageProcesser();
 class MqttHandler {
     constructor() {
         this.mqttClient = null;
-        this.host = 'mqtt://hassio.local';
+        this.host = 'mqtt://192.168.0.104';
     }
 
     connect() {
         // Connect mqtt without credentials 
         // (in case of needed, add username and password parms to 2nd param object)
         this.mqttClient = mqtt.connect(this.host, {
-            username: "user1",
-            password: "user1",
+            username: "TomorrowTech",
+            password: "tomorrow147",
             clean: false,
             clientId: "HumanSensor_Server_1" + Math.random(),
         });

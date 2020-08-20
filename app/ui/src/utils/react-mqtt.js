@@ -23,10 +23,12 @@ export const MqttProvider = ({ children }) => {
     const initMqtt = async () => {
 
       const client = mqtt.connect(
-        "ws://hassio.local:1884",
+        "ws://192.168.0.104:1884",
+       //  "ws://broker.mqttdashboard.com:8000/mqtt",
+       //"wss://test.mosquitto.org:8081",
         {
-          username: "user1",
-          password: "user1",
+          username: "TomorrowTech",
+          password: "tomorrow147",
           clean: false,
           clientId: "HumanSensor_Web_1" + Math.random(),
         });
